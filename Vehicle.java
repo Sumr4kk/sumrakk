@@ -12,6 +12,7 @@ public abstract class Vehicle {
         this.speed = speed;
         this.coordinate = coordinate;
     }
+    public Vehicle() {}
     protected void setValues(int yearRelease, float speed, String color, byte[] coordinate) {
         this.yearRelease = yearRelease;
         this.speed = speed;
