@@ -2,6 +2,7 @@ package com.sumrakk;
 
 public class Truck extends Vehicle {
     private boolean isLoaded;
+    public Engine engine = new Engine();
     public Truck(float speed, byte[] coordinate) {
         super(speed, coordinate);
     }
@@ -18,6 +19,15 @@ public class Truck extends Vehicle {
     protected String getValues() {
         System.out.println(super.getValues());
         return getLoaded();
+    }
+    @Override
+    public void moveObject(float speed) {
+        System.out.println("Объект движется со скоростью: " + speed);
+    }
+    @Override
+    public boolean stopObject() {
+        speed = 0;
+        return true;
     }
 
     public void setLoaded(boolean loaded) {

@@ -26,4 +26,24 @@ public abstract class Vehicle {
         }
         return info + infoCoordinate + "\n";
     }
+    public abstract void moveObject(float speed);
+    public abstract boolean stopObject();
+    class Engine {
+        private boolean isReady;
+        private int km;
+        public void isReady(boolean isReady) {
+            this.isReady = isReady;
+        }
+        public void setValues(boolean isReady, int km) {
+            this.isReady = isReady;
+            this.km = km;
+        }
+        public void info() {
+            if (isReady) {
+                System.out.println("Двигатель исправен");
+            } else {
+                System.out.println("Двигатель неисправен, он проехал " + km + " км.");
+            }
+        }
+    }
 }
